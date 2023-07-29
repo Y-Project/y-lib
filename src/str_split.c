@@ -2,10 +2,11 @@
 #define YSTR_SPLIT
 
 #include <string.h>
+#include <stdlib.h>
 
-char** split_into(char* str, char* token, int* split_count) {
+char** split_into(char* str, char* token, size_t* split_count) {
     char* split_state;
-    int num_splits = 0;
+    size_t num_splits = 0;
     char** splits = NULL;
     char* split = strtok_r(str, token, &split_state);
     while (split != NULL) {

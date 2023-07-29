@@ -3,12 +3,12 @@
 #include <assert.h>
 
 int main(int argc, char** argv) {
-    int num_entries = 0;
+    size_t num_entries = 0;
     char test_string[] = "hello=world\ngood=bye\nuwu=owo";
     char** splits = split_into(test_string, "\n", &num_entries);
 
-    for (int i = 0; i < num_entries; i++) {
-        printf("Entry nr %d is %s\n", i, splits[i]);
+    for (size_t i = 0; i < num_entries; i++) {
+        printf("Entry nr %zu is %s\n", i, splits[i]);
     }
 
     assert(num_entries == 3);
